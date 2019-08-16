@@ -1,0 +1,11 @@
+language: python
+services:
+  - docker
+
+branches:
+  only:
+  - master
+
+script:
+  - docker pull infinitewarp/koku-cli-generator:latest
+  - docker run -e API_JSON_URL -e API_AUTH_USERNAME -e API_AUTH_PASSWORD -e GITHUB_USERNAME -e GITHUB_PASSWORD infinitewarp/koku-cli-generator:latest
