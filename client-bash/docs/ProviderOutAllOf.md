@@ -1,10 +1,8 @@
-# ProviderOut
+# ProviderOut_allOf
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  | [default to null]
-**type** | **string** |  | [default to null]
 **uuid** | **string** |  | [default to null]
 **authentication** | [**ProviderAuthenticationOut**](ProviderAuthenticationOut.md) |  | [default to null]
 **billingUnderscoresource** | [**ProviderBillingSourceOut**](ProviderBillingSourceOut.md) |  | [default to null]

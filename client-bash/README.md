@@ -96,13 +96,22 @@ In Zsh, the generated `_` Zsh completion file must be copied to one of the folde
 
 ## Documentation for API Endpoints
 
-All URIs are relative to */r/insights/platform/cost-management/v1*
+All URIs are relative to */api/cost-management/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AWSReportApi* | [**getAWSCostReports**](docs/AWSReportApi.md#getawscostreports) | **GET** /reports/aws/costs/ | Query to obtain cost reports
 *AWSReportApi* | [**getAWSInstanceReports**](docs/AWSReportApi.md#getawsinstancereports) | **GET** /reports/aws/instance-types/ | Query to obtain AWS instance type data
 *AWSReportApi* | [**getAWSStorageReports**](docs/AWSReportApi.md#getawsstoragereports) | **GET** /reports/aws/storage/ | Query to obtain AWS storage data
+*CostModelApi* | [**createCostModel**](docs/CostModelApi.md#createcostmodel) | **POST** /costmodels/ | Create a new cost model.
+*CostModelApi* | [**deleteCostModel**](docs/CostModelApi.md#deletecostmodel) | **DELETE** /costmodels/{cost_model_uuid}/ | Delete a Cost Model
+*CostModelApi* | [**getCostModel**](docs/CostModelApi.md#getcostmodel) | **GET** /costmodels/{cost_model_uuid}/ | Get a Cost Model.
+*CostModelApi* | [**listCostModels**](docs/CostModelApi.md#listcostmodels) | **GET** /costmodels/ | List the cost models
+*CostModelApi* | [**updateCostModel**](docs/CostModelApi.md#updatecostmodel) | **PUT** /costmodels/{cost_model_uuid}/ | Update a Cost Model
+*DataExportRequestApi* | [**createDataExportRequest**](docs/DataExportRequestApi.md#createdataexportrequest) | **POST** /dataexportrequests/ | Create a data export request
+*DataExportRequestApi* | [**listDataExportRequests**](docs/DataExportRequestApi.md#listdataexportrequests) | **GET** /dataexportrequests/ | List the data export requests
+*DataExportRequestApi* | [**retrieveDataExportRequest**](docs/DataExportRequestApi.md#retrievedataexportrequest) | **GET** /dataexportrequests/{uuid}/ | Get a data export request
+*MetricsApi* | [**getMetrics**](docs/MetricsApi.md#getmetrics) | **GET** /metrics | Obtain Metrics
 *OpenShiftReportApi* | [**getOpenShiftAWSCostReports**](docs/OpenShiftReportApi.md#getopenshiftawscostreports) | **GET** /reports/openshift/infrastructures/aws/costs/ | Query to obtain OpenShift on AWS cost reports
 *OpenShiftReportApi* | [**getOpenShiftAWSInventoryInstanceReport**](docs/OpenShiftReportApi.md#getopenshiftawsinventoryinstancereport) | **GET** /reports/openshift/infrastructures/aws/instance-types/ | Query to obtain OpenShift on AWS instance data
 *OpenShiftReportApi* | [**getOpenShiftAWSInventoryStorageReport**](docs/OpenShiftReportApi.md#getopenshiftawsinventorystoragereport) | **GET** /reports/openshift/infrastructures/aws/storage/ | Query to obtain OpenShift on AWS storage data
@@ -111,14 +120,9 @@ Class | Method | HTTP request | Description
 *OpenShiftReportApi* | [**getOpenShiftMemoryReports**](docs/OpenShiftReportApi.md#getopenshiftmemoryreports) | **GET** /reports/openshift/memory/ | Query to obtain OpenShift memory usage information
 *OpenShiftReportApi* | [**getOpenShiftVolumeReports**](docs/OpenShiftReportApi.md#getopenshiftvolumereports) | **GET** /reports/openshift/volumes/ | Query to obtain OpenShift volume usage information
 *ProviderApi* | [**createProvider**](docs/ProviderApi.md#createprovider) | **POST** /providers/ | Create a provider
-*ProviderApi* | [**deleteProvider**](docs/ProviderApi.md#deleteprovider) | **DELETE** /providers/ | Delete a provider
+*ProviderApi* | [**deleteProvider**](docs/ProviderApi.md#deleteprovider) | **DELETE** /providers/{uuid}/ | Delete a provider
 *ProviderApi* | [**getProvider**](docs/ProviderApi.md#getprovider) | **GET** /providers/{uuid}/ | Get a provider
 *ProviderApi* | [**listProviders**](docs/ProviderApi.md#listproviders) | **GET** /providers/ | List the providers
-*RateApi* | [**createRate**](docs/RateApi.md#createrate) | **POST** /rates/ | Create a rate
-*RateApi* | [**deleteRate**](docs/RateApi.md#deleterate) | **DELETE** /rates/{rate_id} | Delete a rate
-*RateApi* | [**getRate**](docs/RateApi.md#getrate) | **GET** /rates/{rate_id} | Get a rate
-*RateApi* | [**listRates**](docs/RateApi.md#listrates) | **GET** /rates/ | List the rates
-*RateApi* | [**updateRate**](docs/RateApi.md#updaterate) | **PUT** /rates/{rate_id} | Update a rate
 *StatusApi* | [**getStatus**](docs/StatusApi.md#getstatus) | **GET** /status/ | Obtain server status
 *TagsApi* | [**getAWSTagData**](docs/TagsApi.md#getawstagdata) | **GET** /tags/aws/ | Query to obtain AWS tags
 *TagsApi* | [**getOpenShiftAWSTagData**](docs/TagsApi.md#getopenshiftawstagdata) | **GET** /tags/openshift/infrastructures/aws/ | Query to obtain OpenShift-on-AWS tags
@@ -132,27 +136,46 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [CostModel](docs/CostModel.md)
+ - [CostModelOut](docs/CostModelOut.md)
+ - [CostModelOutAllOf](docs/CostModelOutAllOf.md)
+ - [CostModelPagination](docs/CostModelPagination.md)
+ - [CostModelPaginationAllOf](docs/CostModelPaginationAllOf.md)
+ - [CostModelResp](docs/CostModelResp.md)
+ - [CostModelRespProviders](docs/CostModelRespProviders.md)
  - [Customer](docs/Customer.md)
  - [CustomerOut](docs/CustomerOut.md)
+ - [CustomerOutAllOf](docs/CustomerOutAllOf.md)
+ - [DataExportRequest](docs/DataExportRequest.md)
+ - [DataExportRequestOut](docs/DataExportRequestOut.md)
+ - [DataExportRequestOutAllOf](docs/DataExportRequestOutAllOf.md)
+ - [DataExportRequestPagination](docs/DataExportRequestPagination.md)
+ - [DataExportRequestPaginationAllOf](docs/DataExportRequestPaginationAllOf.md)
  - [Error](docs/Error.md)
  - [ListPagination](docs/ListPagination.md)
+ - [Metrics](docs/Metrics.md)
+ - [MetricsAllOf](docs/MetricsAllOf.md)
+ - [MetricsOut](docs/MetricsOut.md)
  - [PaginationLinks](docs/PaginationLinks.md)
  - [PaginationMeta](docs/PaginationMeta.md)
  - [Provider](docs/Provider.md)
  - [ProviderAuthenticationIn](docs/ProviderAuthenticationIn.md)
  - [ProviderAuthenticationOut](docs/ProviderAuthenticationOut.md)
+ - [ProviderAuthenticationOutAllOf](docs/ProviderAuthenticationOutAllOf.md)
  - [ProviderBillingSourceIn](docs/ProviderBillingSourceIn.md)
  - [ProviderBillingSourceOut](docs/ProviderBillingSourceOut.md)
  - [ProviderIn](docs/ProviderIn.md)
+ - [ProviderInAllOf](docs/ProviderInAllOf.md)
  - [ProviderOut](docs/ProviderOut.md)
+ - [ProviderOutAllOf](docs/ProviderOutAllOf.md)
  - [ProviderPagination](docs/ProviderPagination.md)
+ - [ProviderPaginationAllOf](docs/ProviderPaginationAllOf.md)
  - [Rate](docs/Rate.md)
- - [RateIn](docs/RateIn.md)
- - [RateOut](docs/RateOut.md)
- - [RatePagination](docs/RatePagination.md)
  - [Report](docs/Report.md)
  - [ReportCost](docs/ReportCost.md)
+ - [ReportCostAllOf](docs/ReportCostAllOf.md)
  - [ReportCosts](docs/ReportCosts.md)
+ - [ReportCostsAllOf](docs/ReportCostsAllOf.md)
  - [ReportCostsOpenShift](docs/ReportCostsOpenShift.md)
  - [ReportCostsOpenShiftOrdering](docs/ReportCostsOpenShiftOrdering.md)
  - [ReportDelta](docs/ReportDelta.md)
@@ -164,17 +187,23 @@ Class | Method | HTTP request | Description
  - [ReportOpenShiftAWSFilter](docs/ReportOpenShiftAWSFilter.md)
  - [ReportOpenShiftAWSGrouping](docs/ReportOpenShiftAWSGrouping.md)
  - [ReportOpenShiftAWSInstanceInventory](docs/ReportOpenShiftAWSInstanceInventory.md)
+ - [ReportOpenShiftAWSInstanceInventoryAllOf](docs/ReportOpenShiftAWSInstanceInventoryAllOf.md)
  - [ReportOpenShiftAWSOrdering](docs/ReportOpenShiftAWSOrdering.md)
  - [ReportOpenShiftAWSStorageInventory](docs/ReportOpenShiftAWSStorageInventory.md)
+ - [ReportOpenShiftAWSStorageInventoryAllOf](docs/ReportOpenShiftAWSStorageInventoryAllOf.md)
  - [ReportOpenShiftCpu](docs/ReportOpenShiftCpu.md)
+ - [ReportOpenShiftCpuAllOf](docs/ReportOpenShiftCpuAllOf.md)
  - [ReportOpenShiftGrouping](docs/ReportOpenShiftGrouping.md)
  - [ReportOpenShiftMemory](docs/ReportOpenShiftMemory.md)
+ - [ReportOpenShiftMemoryAllOf](docs/ReportOpenShiftMemoryAllOf.md)
  - [ReportOpenShiftVolume](docs/ReportOpenShiftVolume.md)
+ - [ReportOpenShiftVolumeAllOf](docs/ReportOpenShiftVolumeAllOf.md)
  - [ReportOrdering](docs/ReportOrdering.md)
  - [ReportPaginationMeta](docs/ReportPaginationMeta.md)
  - [ReportResolution](docs/ReportResolution.md)
  - [ReportResourceScope](docs/ReportResourceScope.md)
  - [ReportStorageInventory](docs/ReportStorageInventory.md)
+ - [ReportStorageInventoryAllOf](docs/ReportStorageInventoryAllOf.md)
  - [ReportTimeScopeUnits](docs/ReportTimeScopeUnits.md)
  - [ReportTimeScopeValue](docs/ReportTimeScopeValue.md)
  - [Status](docs/Status.md)
@@ -185,6 +214,7 @@ Class | Method | HTTP request | Description
  - [UserPreference](docs/UserPreference.md)
  - [UserPreferenceOut](docs/UserPreferenceOut.md)
  - [UserPreferencePagination](docs/UserPreferencePagination.md)
+ - [UserPreferencePaginationAllOf](docs/UserPreferencePaginationAllOf.md)
 
 
 ## Documentation For Authorization

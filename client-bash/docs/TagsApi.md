@@ -1,6 +1,6 @@
 # TagsApi
 
-All URIs are relative to */r/insights/platform/cost-management/v1*
+All URIs are relative to */api/cost-management/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ Query to obtain AWS tags
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the query as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **keyOnly** | **boolean** | Flag to indicate whether or not only the tag key values will be returned. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
@@ -61,7 +61,7 @@ Query to obtain OpenShift-on-AWS tags
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the query as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **keyOnly** | **boolean** | Flag to indicate whether or not only the tag key values will be returned. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
@@ -97,7 +97,7 @@ Query to obtain OpenShift tags
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the query as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **keyOnly** | **boolean** | Flag to indicate whether or not only the tag key values will be returned. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]

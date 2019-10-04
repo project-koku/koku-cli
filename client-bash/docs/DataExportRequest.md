@@ -1,11 +1,11 @@
-# RateOut
+# DataExportRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**providerUnderscoreuuids** | [**map**](.md) |  | [default to null]
-**metric** | [**map**](.md) |  | [default to null]
-**tieredUnderscorerate** | [**map**](.md) |  | [optional] [default to null]
+**startUnderscoredate** | **string** |  | [default to null]
+**endUnderscoredate** | **string** |  | [default to null]
+**bucketUnderscorename** | **string** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

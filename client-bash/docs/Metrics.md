@@ -1,11 +1,11 @@
-# ReportOpenShiftMemory
+# Metrics
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**ReportPaginationMeta**](ReportPaginationMeta.md) |  | [optional] [default to null]
+**meta** | [**PaginationMeta**](PaginationMeta.md) |  | [optional] [default to null]
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] [default to null]
-**data** | **array[map]** |  | [default to null]
+**data** | [**array[MetricsOut]**](MetricsOut.md) |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

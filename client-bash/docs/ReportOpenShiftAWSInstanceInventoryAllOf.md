@@ -1,10 +1,8 @@
-# ReportOpenShiftAWSStorageInventory
+# ReportOpenShiftAWSInstanceInventory_allOf
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**ReportPaginationMeta**](ReportPaginationMeta.md) |  | [optional] [default to null]
-**links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] [default to null]
 **groupUnderscoreby** | [**ReportOpenShiftAWSGrouping**](ReportOpenShiftAWSGrouping.md) |  | [optional] [default to null]
 **orderUnderscoreby** | [**ReportOpenShiftAWSOrdering**](ReportOpenShiftAWSOrdering.md) |  | [optional] [default to null]
 **filter** | [**ReportOpenShiftAWSFilter**](ReportOpenShiftAWSFilter.md) |  | [optional] [default to null]

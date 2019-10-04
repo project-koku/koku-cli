@@ -1,25 +1,25 @@
-# RateApi
+# CostModelApi
 
-All URIs are relative to */r/insights/platform/cost-management/v1*
+All URIs are relative to */api/cost-management/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRate**](RateApi.md#createRate) | **POST** /rates/ | Create a rate
-[**deleteRate**](RateApi.md#deleteRate) | **DELETE** /rates/{rate_id} | Delete a rate
-[**getRate**](RateApi.md#getRate) | **GET** /rates/{rate_id} | Get a rate
-[**listRates**](RateApi.md#listRates) | **GET** /rates/ | List the rates
-[**updateRate**](RateApi.md#updateRate) | **PUT** /rates/{rate_id} | Update a rate
+[**createCostModel**](CostModelApi.md#createCostModel) | **POST** /costmodels/ | Create a new cost model.
+[**deleteCostModel**](CostModelApi.md#deleteCostModel) | **DELETE** /costmodels/{cost_model_uuid}/ | Delete a Cost Model
+[**getCostModel**](CostModelApi.md#getCostModel) | **GET** /costmodels/{cost_model_uuid}/ | Get a Cost Model.
+[**listCostModels**](CostModelApi.md#listCostModels) | **GET** /costmodels/ | List the cost models
+[**updateCostModel**](CostModelApi.md#updateCostModel) | **PUT** /costmodels/{cost_model_uuid}/ | Update a Cost Model
 
 
 
-## createRate
+## createCostModel
 
-Create a rate
+Create a new cost model.
 
 ### Example
 
 ```bash
- createRate
+ createCostModel
 ```
 
 ### Parameters
@@ -27,11 +27,11 @@ Create a rate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rateIn** | [**RateIn**](RateIn.md) | Rate to add to a Rate |
+ **costModel** | [**CostModel**](CostModel.md) |  |
 
 ### Return type
 
-[**RateOut**](RateOut.md)
+[**CostModelOut**](CostModelOut.md)
 
 ### Authorization
 
@@ -45,14 +45,14 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## deleteRate
+## deleteCostModel
 
-Delete a rate
+Delete a Cost Model
 
 ### Example
 
 ```bash
- deleteRate rate_id=value
+ deleteCostModel cost_model_uuid=value
 ```
 
 ### Parameters
@@ -60,7 +60,7 @@ Delete a rate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rateId** | **integer** | ID of rate to get | [default to null]
+ **costModelUuid** | [**string**](.md) | UUID of Cost Model to get | [default to null]
 
 ### Return type
 
@@ -78,14 +78,14 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## getRate
+## getCostModel
 
-Get a rate
+Get a Cost Model.
 
 ### Example
 
 ```bash
- getRate rate_id=value
+ getCostModel cost_model_uuid=value
 ```
 
 ### Parameters
@@ -93,11 +93,11 @@ Get a rate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rateId** | [**string**](.md) | ID of rate to get | [default to null]
+ **costModelUuid** | [**string**](.md) | UUID of Cost Model to get | [default to null]
 
 ### Return type
 
-[**RateOut**](RateOut.md)
+[**CostModelOut**](CostModelOut.md)
 
 ### Authorization
 
@@ -111,14 +111,14 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## listRates
+## listCostModels
 
-List the rates
+List the cost models
 
 ### Example
 
 ```bash
- listRates  offset=value  limit=value  provider_uuid=value
+ listCostModels  offset=value  limit=value  provider_uuid=value  source_type=value  name=value
 ```
 
 ### Parameters
@@ -128,15 +128,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 10]
- **providerUuid** | [**string**](.md) | Filter response onprovider uuid. | [optional] [default to null]
+ **providerUuid** | [**string**](.md) | Filter response on provider uuid. | [optional] [default to null]
+ **sourceType** | **string** | Filter response on provider source type. | [optional] [default to null]
+ **name** | **string** | Filter response on cost model name. | [optional] [default to null]
 
 ### Return type
 
-[**RatePagination**](RatePagination.md)
+[**CostModelPagination**](CostModelPagination.md)
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -146,14 +148,14 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## updateRate
+## updateCostModel
 
-Update a rate
+Update a Cost Model
 
 ### Example
 
 ```bash
- updateRate rate_id=value
+ updateCostModel cost_model_uuid=value
 ```
 
 ### Parameters
@@ -161,12 +163,12 @@ Update a rate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rateId** | **integer** | ID of rate to get | [default to null]
- **rateIn** | [**RateIn**](RateIn.md) | Update to a Rate |
+ **costModelUuid** | [**string**](.md) | UUID of Cost Model to get | [default to null]
+ **costModel** | [**CostModel**](CostModel.md) | Update to a Cost Model |
 
 ### Return type
 
-(empty response body)
+[**CostModelOut**](CostModelOut.md)
 
 ### Authorization
 

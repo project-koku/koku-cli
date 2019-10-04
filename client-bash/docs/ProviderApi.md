@@ -1,11 +1,11 @@
 # ProviderApi
 
-All URIs are relative to */r/insights/platform/cost-management/v1*
+All URIs are relative to */api/cost-management/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProvider**](ProviderApi.md#createProvider) | **POST** /providers/ | Create a provider
-[**deleteProvider**](ProviderApi.md#deleteProvider) | **DELETE** /providers/ | Delete a provider
+[**deleteProvider**](ProviderApi.md#deleteProvider) | **DELETE** /providers/{uuid}/ | Delete a provider
 [**getProvider**](ProviderApi.md#getProvider) | **GET** /providers/{uuid}/ | Get a provider
 [**listProviders**](ProviderApi.md#listProviders) | **GET** /providers/ | List the providers
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not Applicable
-- **Accept**: */*
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -71,6 +71,15 @@ _()
     operations["getAWSCostReports"]=1
     operations["getAWSInstanceReports"]=1
     operations["getAWSStorageReports"]=1
+    operations["createCostModel"]=1
+    operations["deleteCostModel"]=1
+    operations["getCostModel"]=1
+    operations["listCostModels"]=1
+    operations["updateCostModel"]=1
+    operations["createDataExportRequest"]=1
+    operations["listDataExportRequests"]=1
+    operations["retrieveDataExportRequest"]=1
+    operations["getMetrics"]=1
     operations["getOpenShiftAWSCostReports"]=1
     operations["getOpenShiftAWSInventoryInstanceReport"]=1
     operations["getOpenShiftAWSInventoryStorageReport"]=1
@@ -82,11 +91,6 @@ _()
     operations["deleteProvider"]=1
     operations["getProvider"]=1
     operations["listProviders"]=1
-    operations["createRate"]=1
-    operations["deleteRate"]=1
-    operations["getRate"]=1
-    operations["listRates"]=1
-    operations["updateRate"]=1
     operations["getStatus"]=1
     operations["getAWSTagData"]=1
     operations["getOpenShiftAWSTagData"]=1
@@ -103,6 +107,15 @@ _()
     operation_parameters["getAWSCostReports"]="delta= filter= group_by= order_by= offset= limit= "
     operation_parameters["getAWSInstanceReports"]="filter= group_by= order_by= units= offset= limit= "
     operation_parameters["getAWSStorageReports"]="filter= group_by= order_by= units= offset= limit= "
+    operation_parameters["createCostModel"]=""
+    operation_parameters["deleteCostModel"]="cost_model_uuid= "
+    operation_parameters["getCostModel"]="cost_model_uuid= "
+    operation_parameters["listCostModels"]="offset= limit= provider_uuid= source_type= name= "
+    operation_parameters["updateCostModel"]="cost_model_uuid= "
+    operation_parameters["createDataExportRequest"]=""
+    operation_parameters["listDataExportRequests"]="offset= limit= "
+    operation_parameters["retrieveDataExportRequest"]="uuid= "
+    operation_parameters["getMetrics"]=""
     operation_parameters["getOpenShiftAWSCostReports"]="delta= filter= group_by= order_by= offset= limit= "
     operation_parameters["getOpenShiftAWSInventoryInstanceReport"]="filter= group_by= order_by= units= offset= limit= "
     operation_parameters["getOpenShiftAWSInventoryStorageReport"]="filter= group_by= order_by= units= offset= limit= "
@@ -114,11 +127,6 @@ _()
     operation_parameters["deleteProvider"]="uuid= "
     operation_parameters["getProvider"]="uuid= "
     operation_parameters["listProviders"]="type= name= offset= limit= "
-    operation_parameters["createRate"]=""
-    operation_parameters["deleteRate"]="rate_id= "
-    operation_parameters["getRate"]="rate_id= "
-    operation_parameters["listRates"]="offset= limit= provider_uuid= "
-    operation_parameters["updateRate"]="rate_id= "
     operation_parameters["getStatus"]=""
     operation_parameters["getAWSTagData"]="filter= key_only= offset= limit= "
     operation_parameters["getOpenShiftAWSTagData"]="filter= key_only= offset= limit= "

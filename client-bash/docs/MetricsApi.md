@@ -1,21 +1,21 @@
-# StatusApi
+# MetricsApi
 
 All URIs are relative to */api/cost-management/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getStatus**](StatusApi.md#getStatus) | **GET** /status/ | Obtain server status
+[**getMetrics**](MetricsApi.md#getMetrics) | **GET** /metrics | Obtain Metrics
 
 
 
-## getStatus
+## getMetrics
 
-Obtain server status
+Obtain Metrics
 
 ### Example
 
 ```bash
- getStatus
+ getMetrics
 ```
 
 ### Parameters
@@ -24,7 +24,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Status**](Status.md)
+[**Metrics**](Metrics.md)
 
 ### Authorization
 

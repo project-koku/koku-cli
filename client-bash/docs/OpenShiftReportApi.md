@@ -1,6 +1,6 @@
 # OpenShiftReportApi
 
-All URIs are relative to */r/insights/platform/cost-management/v1*
+All URIs are relative to */api/cost-management/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,9 +30,9 @@ Query to obtain OpenShift on AWS cost reports
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delta** | **string** | Toggle to include delta values in report. | [optional] [default to null]
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
 
@@ -67,9 +67,9 @@ Query to obtain OpenShift on AWS instance data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **units** | **string** | The units used to report data. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
@@ -105,9 +105,9 @@ Query to obtain OpenShift on AWS storage data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **units** | **string** | The units used to report data. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
@@ -143,9 +143,9 @@ Query to obtain OpenShift compute usage information
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
 
@@ -181,9 +181,9 @@ Query to obtain cost reports
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delta** | **string** | Toggle to include delta values in report. | [optional] [default to null]
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
 
@@ -218,9 +218,9 @@ Query to obtain OpenShift memory usage information
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
 
@@ -255,9 +255,9 @@ Query to obtain OpenShift volume usage information
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string** | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **groupBy** | **string** | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
- **orderBy** | **string** | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **filter** | [**map**](.md) | The filter to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **groupBy** | [**map**](.md) | The grouping to apply to the report as a URL encoded dictionary. | [optional] [default to null]
+ **orderBy** | [**map**](.md) | The ordering to apply to the report as a URL encoded dictionary. | [optional] [default to null]
  **offset** | **integer** | Parameter for selecting the offset of data. | [optional] [default to 0]
  **limit** | **integer** | Parameter for selecting the amount of data in a returned. | [optional] [default to 100]
 

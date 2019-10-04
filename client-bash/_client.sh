@@ -298,7 +298,13 @@ case $state in
     _values "Operations" \
             "getAWSCostReports[Query to obtain cost reports]" \
             "getAWSInstanceReports[Query to obtain AWS instance type data]" \
-            "getAWSStorageReports[Query to obtain AWS storage data]"             "getOpenShiftAWSCostReports[Query to obtain OpenShift on AWS cost reports]" \
+            "getAWSStorageReports[Query to obtain AWS storage data]"             "createCostModel[Create a new cost model.]" \
+            "deleteCostModel[Delete a Cost Model]" \
+            "getCostModel[Get a Cost Model.]" \
+            "listCostModels[List the cost models]" \
+            "updateCostModel[Update a Cost Model]"             "createDataExportRequest[Create a data export request]" \
+            "listDataExportRequests[List the data export requests]" \
+            "retrieveDataExportRequest[Get a data export request]"             "getMetrics[Obtain Metrics]"             "getOpenShiftAWSCostReports[Query to obtain OpenShift on AWS cost reports]" \
             "getOpenShiftAWSInventoryInstanceReport[Query to obtain OpenShift on AWS instance data]" \
             "getOpenShiftAWSInventoryStorageReport[Query to obtain OpenShift on AWS storage data]" \
             "getOpenShiftComputeReports[Query to obtain OpenShift compute usage information]" \
@@ -307,11 +313,7 @@ case $state in
             "getOpenShiftVolumeReports[Query to obtain OpenShift volume usage information]"             "createProvider[Create a provider]" \
             "deleteProvider[Delete a provider]" \
             "getProvider[Get a provider]" \
-            "listProviders[List the providers]"             "createRate[Create a rate]" \
-            "deleteRate[Delete a rate]" \
-            "getRate[Get a rate]" \
-            "listRates[List the rates]" \
-            "updateRate[Update a rate]"             "getStatus[Obtain server status]"             "getAWSTagData[Query to obtain AWS tags]" \
+            "listProviders[List the providers]"             "getStatus[Obtain server status]"             "getAWSTagData[Query to obtain AWS tags]" \
             "getOpenShiftAWSTagData[Query to obtain OpenShift-on-AWS tags]" \
             "getOpenShiftTagData[Query to obtain OpenShift tags]"             "createUserPreference[Create a user preference]" \
             "deleteUserPreference[Delete a user preference]" \
@@ -358,6 +360,71 @@ case $state in
 "offset=:[QUERY] Parameter for selecting the offset of data."
 "limit=:[QUERY] Parameter for selecting the amount of data in a returned."
           )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      createCostModel)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      deleteCostModel)
+        local -a _op_arguments
+        _op_arguments=(
+          "cost_model_uuid=:[PATH] UUID of Cost Model to get"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      getCostModel)
+        local -a _op_arguments
+        _op_arguments=(
+          "cost_model_uuid=:[PATH] UUID of Cost Model to get"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      listCostModels)
+        local -a _op_arguments
+        _op_arguments=(
+                    "offset=:[QUERY] Parameter for selecting the offset of data."
+"limit=:[QUERY] Parameter for selecting the amount of data in a returned."
+"provider_uuid=:[QUERY] Filter response on provider uuid."
+"source_type=:[QUERY] Filter response on provider source type."
+"name=:[QUERY] Filter response on cost model name."
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      updateCostModel)
+        local -a _op_arguments
+        _op_arguments=(
+          "cost_model_uuid=:[PATH] UUID of Cost Model to get"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      createDataExportRequest)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      listDataExportRequests)
+        local -a _op_arguments
+        _op_arguments=(
+                    "offset=:[QUERY] Parameter for selecting the offset of data."
+"limit=:[QUERY] Parameter for selecting the amount of data in a returned."
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      retrieveDataExportRequest)
+        local -a _op_arguments
+        _op_arguments=(
+          "uuid=:[PATH] ID of data export request to get"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      getMetrics)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       getOpenShiftAWSCostReports)
@@ -471,42 +538,6 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      createRate)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      deleteRate)
-        local -a _op_arguments
-        _op_arguments=(
-          "rate_id=:[PATH] ID of rate to get"
-                    )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      getRate)
-        local -a _op_arguments
-        _op_arguments=(
-          "rate_id=:[PATH] ID of rate to get"
-                    )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      listRates)
-        local -a _op_arguments
-        _op_arguments=(
-                    "offset=:[QUERY] Parameter for selecting the offset of data."
-"limit=:[QUERY] Parameter for selecting the amount of data in a returned."
-"provider_uuid=:[QUERY] Filter response onprovider uuid."
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      updateRate)
-        local -a _op_arguments
-        _op_arguments=(
-          "rate_id=:[PATH] ID of rate to get"
-                    )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       getStatus)
         local -a _op_arguments
         _op_arguments=(
@@ -516,7 +547,7 @@ case $state in
       getAWSTagData)
         local -a _op_arguments
         _op_arguments=(
-                    "filter=:[QUERY] The filter to apply to the query as a URL encoded dictionary."
+                    "filter=:[QUERY] The filter to apply to the report as a URL encoded dictionary."
 "key_only=true:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
           "key_only=false:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
 "offset=:[QUERY] Parameter for selecting the offset of data."
@@ -527,7 +558,7 @@ case $state in
       getOpenShiftAWSTagData)
         local -a _op_arguments
         _op_arguments=(
-                    "filter=:[QUERY] The filter to apply to the query as a URL encoded dictionary."
+                    "filter=:[QUERY] The filter to apply to the report as a URL encoded dictionary."
 "key_only=true:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
           "key_only=false:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
 "offset=:[QUERY] Parameter for selecting the offset of data."
@@ -538,7 +569,7 @@ case $state in
       getOpenShiftTagData)
         local -a _op_arguments
         _op_arguments=(
-                    "filter=:[QUERY] The filter to apply to the query as a URL encoded dictionary."
+                    "filter=:[QUERY] The filter to apply to the report as a URL encoded dictionary."
 "key_only=true:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
           "key_only=false:[QUERY] Flag to indicate whether or not only the tag key values will be returned."
 "offset=:[QUERY] Parameter for selecting the offset of data."
